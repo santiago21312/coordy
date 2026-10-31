@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.network.chat.TextComponent;
 import java.util.Locale;
+import org.lwjgl.glfw.GLFW;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -17,11 +18,11 @@ import net.minecraft.network.chat.TextColor;
 
 public class CoordinateHudClient implements ClientModInitializer {
 	private static final String CATEGORY = "key.categories.misc";
-	private static final KeyMapping TOGGLE_KEY = register("key.coordhud.toggle_coordinates", InputConstants.KEY_M);
-	private static final KeyMapping CYCLE_COLORS_KEY = register("key.coordhud.cycle_colors", InputConstants.KEY_N);
-	private static final KeyMapping CYCLE_POSITION_KEY = register("key.coordhud.cycle_position", InputConstants.KEY_J);
-	private static final KeyMapping CYCLE_SIZE_KEY = register("key.coordhud.cycle_size", InputConstants.KEY_K);
-	private static final KeyMapping CYCLE_FORMAT_KEY = register("key.coordhud.cycle_format", InputConstants.KEY_H);
+	private static final KeyMapping TOGGLE_KEY = register("key.coordhud.toggle_coordinates", GLFW.GLFW_KEY_M);
+	private static final KeyMapping CYCLE_COLORS_KEY = register("key.coordhud.cycle_colors", GLFW.GLFW_KEY_N);
+	private static final KeyMapping CYCLE_POSITION_KEY = register("key.coordhud.cycle_position", GLFW.GLFW_KEY_J);
+	private static final KeyMapping CYCLE_SIZE_KEY = register("key.coordhud.cycle_size", GLFW.GLFW_KEY_K);
+	private static final KeyMapping CYCLE_FORMAT_KEY = register("key.coordhud.cycle_format", GLFW.GLFW_KEY_H);
 	private static final int[] LABEL_COLORS = {
 		0xFFFFFF, 0x000000, 0x000000, 0xFFFFFF, 0x00FFFF,
 		0xFF0000, 0xFF00FF, 0xFF69B4, 0xFFA500, 0x0000FF
